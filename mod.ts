@@ -1,3 +1,4 @@
+// deno-lint-ignore-file
 import lodash from "https://esm.sh/lodash";
 import { DB, KValue, Table } from "./mod.d.ts";
 
@@ -97,8 +98,6 @@ export class TakoKV {
   }
 
   getSearchRow(tableName: string, columnName: string, searchValue: any): any[] | null {
-    let tragetIndex = null;
-    
    const searchResult: any[] | undefined = this.getTable(tableName)[columnName].find((row: any) => row === searchValue);
 
     if (searchResult === undefined) {
