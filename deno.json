@@ -2,5 +2,7 @@
   "name": "@takoserver/takokv",
   "version": "0.1.0",
   "exports": "./mod.ts",
-  "imports": {}
+  "imports": {
+    "lodash": "npm:lodash@4.17.21"
+  }
 }

@@ -1,5 +1,5 @@
 // deno-lint-ignore-file
-import lodash from "https://esm.sh/lodash@4.17.21";
+import lodash from "lodash";
 import { DB, KValue, Table } from "./mod.d.ts";
 export class TakoKV {
   constructor(
