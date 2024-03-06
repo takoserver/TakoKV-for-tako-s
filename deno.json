@@ -1,5 +1,6 @@
 {
-    "name": "@takoserver/takokv",
-    "version": "0.1.0",
-    "exports": "./mod.ts"
-  }
+  "name": "@takoserver/takokv",
+  "version": "0.1.0",
+  "exports": "./mod.ts",
+  "imports": {}
+}

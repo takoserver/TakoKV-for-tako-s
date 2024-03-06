@@ -5,6 +5,7 @@ export interface KValue {
 }
 
 export interface Table {
+  // deno-lint-ignore no-explicit-any
   [key: string]: any[], // Column Name
   id: number[]
 }

@@ -1,7 +1,6 @@
 // deno-lint-ignore-file
-import lodash from "https://esm.sh/lodash";
+import lodash from "https://esm.sh/lodash@4.17.21";
 import { DB, KValue, Table } from "./mod.d.ts";
-
 export class TakoKV {
   constructor(
     public KV: any & {
@@ -52,7 +51,6 @@ export class TakoKV {
         this.current[tableName][columns[i]] = []; // create empty column
       }
     }
-    
     return true;
   }
 
@@ -89,7 +87,7 @@ export class TakoKV {
     return Object.entries(this.current[tableName]).length; // id, ...col
   }
 
-  getTable(tableName: string): Table {
+  getTable(tableName: string): any {
     return this.current[tableName];
   }
 
@@ -107,7 +105,7 @@ export class TakoKV {
     return searchResult;
   } // 👹
 
-  deleteColumn(tableName: string, columnName: string): boolean {
+  deleteColumn(tableName: string, columnName: string): any {
     delete this.current[tableName][columnName];
   }
 
@@ -146,8 +144,8 @@ export class TakoKV {
     arr.length--;
     return arr;
   }
-
-  async update(): Promise<boolean> {
+  //typescript error 修正するまで封印
+  /*async update(): Promise<boolean> {
     if (lodash.isEqual(this.before, this.current)) {
       return false;
     } // Non Update
@@ -160,7 +158,7 @@ export class TakoKV {
 
     this.before = Object.create(this.current); // Executed
     return true;
-  }
+  }*/
 }
 
 /**
